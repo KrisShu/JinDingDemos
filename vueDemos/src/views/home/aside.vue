@@ -1,6 +1,11 @@
 <template>
     <div class="aside-wrap">
+        <div class="aside-top flex-wrap j-between">
+            <p>测试案例</p>
+            <i class="el-icon-s-fold"></i>
+        </div>
         <el-menu
+            router
             default-active="2"
             class="el-menu-vertical-demo"
             @open="handleOpen"
@@ -13,10 +18,8 @@
                         <span>{{item.meta.title}}</span>
                     </template>
                     <el-menu-item-group>
-                        <el-menu-item  v-for="(sub,index2) in item.children" :key="index2" :index="sub.name">
-                                <router-link :to="sub.path">
+                        <el-menu-item  v-for="(sub,index2) in item.children" :key="index2" :index="sub.path">
                                     {{sub.meta.title}}
-                                </router-link>
                         </el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
@@ -54,6 +57,14 @@ export default {
 
 <style lang="scss">
 .aside-wrap{
-    width: 200px;
+    width: 240px;
+    box-sizing: border-box;
+    .aside-top{
+        padding: 16px 16px 20px;
+        height: 56px;
+        background: #000000;
+        box-sizing: border-box;
+        color: white;
+    }
 }
 </style>

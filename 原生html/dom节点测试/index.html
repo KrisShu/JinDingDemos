@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        .li-wrap{
+            cursor: pointer;
+            width: 1000px;
+            height: 500px;
+            background: wheat;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="body">
+        <p>测试各种不同的追加节点方式</p>
+        <ul class="dom-wrap">
+            <li class="li-wrap html-way-wrap">
+
+            </li>
+            <li class="li-wrap after-way-wrap"></li>
+        </ul>
+
+    </div>
+    <h2>测试结果 通过jq动态任何方式追加的节点  都不会在页面生成节点</h2>
+    
+</body>
+
+<script src="./index.js"></script>
+</html>
