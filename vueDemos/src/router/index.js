@@ -2,11 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home/index.vue'
 import homeIndex from "../views/home/home-index.vue";
-import contentRouter from './content'
-
+import loginVerification from './loginVerification/index'
+import imgageLazyLoad from './imgageLazyLoad/index'
 Vue.use(VueRouter)
-
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Home',
@@ -17,7 +16,7 @@ const routes = [
     },
     children:[
       {
-        path: "home-index",
+        path: "/home-index",
         name: "home-index",
         component: homeIndex,
         meta: {
@@ -25,10 +24,11 @@ const routes = [
           affix: true
         }
       },
-      ...contentRouter,
+      ...loginVerification,
+      ...imgageLazyLoad
+      
     ]
-  },
-
+  }
  
 ]
 

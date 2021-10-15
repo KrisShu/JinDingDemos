@@ -4,7 +4,7 @@
 -->
 <template>
 	<div>
-		this is home index --- {{random}}
+		这里是默认首页
 	</div>
 </template>
 

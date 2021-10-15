@@ -18,15 +18,14 @@
                         <span>{{item.meta.title}}</span>
                     </template>
                     <el-menu-item-group>
-                        <el-menu-item  v-for="(sub,index2) in item.children" :key="index2" :index="sub.path">
-                                    {{sub.meta.title}}
+                        <el-menu-item  v-for="(sub,index2) in item.children" :key="index2" :index="item.path+'/'+sub.path">
+                            {{sub.meta.title}} {{item.path+'/'+sub.path}}
                         </el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
-
-                <el-menu-item v-else :index="item.name" :key="index">
+                <el-menu-item v-else :index="item.path" :key="index">
                     <i class="el-icon-setting"></i>
-                    <span slot="title">导航四</span>
+                    <span slot="title">{{item.meta.title}} {{item.path}}</span>
                 </el-menu-item>
             </template>
         </el-menu>
@@ -34,15 +33,15 @@
 </template>
 
 <script>
-import contentRouter from '../../router/content';
+import {routes} from '../../router/index';
 export default {
     data(){
         return{
-            contentRouter:contentRouter
+            contentRouter:routes[0].children
         }
     },
     mounted(){
-        console.log("contentRouter",contentRouter)
+        console.log("contentRouter",this.contentRouter)
     },
     methods:{
         handleOpen(){

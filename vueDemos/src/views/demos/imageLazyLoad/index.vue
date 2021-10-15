@@ -1,6 +1,6 @@
 <template>
     <div>
-        登录模块1
+        这里是图片懒加载
     </div>
 </template>
 
